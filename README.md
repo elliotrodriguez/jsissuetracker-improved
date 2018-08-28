@@ -1,5 +1,5 @@
 # jsissuetracker-improved
-An improved version of the Pure Javascript tutorial provided by CodingTheSmartWay.com on Medium. The original repo can be found (here)[https://github.com/seeschweiler/jsissuetracker]
+An improved version of the Pure Javascript tutorial provided by CodingTheSmartWay.com on Medium. The original repo can be found [here](https://github.com/seeschweiler/jsissuetracker)
 
 # What Is This?
 I stumbled upon a tutorial on [Pure JavaScript - Building A Real-World Application From Scratch](https://medium.com/codingthesmartway-com-blog/pure-javascript-building-a-real-world-application-from-scratch-5213591cfcd6) from CodingTheSmartWay.com one afternoon, and I loved the idea that this website was trying to share, but the JavaScript used in the tutorial is outdated, broken, and to me, required a lot of refactoring. So, I refactored it. 
