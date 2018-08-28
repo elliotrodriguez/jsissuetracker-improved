@@ -1,4 +1,4 @@
-# issue-tracker-improved
+# jsissuetracker-improved
 An improved version of the Pure Javascript tutorial provided by CodingTheSmartWay.com on Medium. The original repo can be found (here)[https://github.com/seeschweiler/jsissuetracker]
 
 # What Is This?
