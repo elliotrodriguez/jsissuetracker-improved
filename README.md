@@ -10,11 +10,11 @@ I believe that if this is intended to be a teaching tool, then the tool should b
 # What Did I Do?
 - _Replaced `for` loops with ES6's `find` function_ - this reduced the `O(n)` for loops looking for an issue by it's id with a faster, more legible syntax 
 - Fixed an issue where the description field used in the `saveIssue` method did not match the form element's name, resulting in `undefined` descriptions even after the user added one
-- 
 - Replaced string concatenation used to create the issue cards with ES6's template strings
 - Added some defaults if a description or assigned user are left blank
 - separated the retrieval of the issues database into its own function, DRYing it out
 - Used ES6 property value shorthand notation 
+- various other odds and ends
 
 # What Else Needs To Happen?
 - Definitely should be some tests. 
