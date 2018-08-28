@@ -27,6 +27,6 @@ I believe that if this is intended to be a teaching tool, then the tool should b
   - ... lots more items.
   
  # Can I Make Changes To This?
-ABSOLUTELY. Please fork and extend. I would like to get to extending this little app, because it is a good example of creating a JS application without standing up a framework, but if you get to it before I do, just submit a PR. Note that there are 34 forks and no PRs in the (original repo)[https://github.com/seeschweiler/jsissuetracker], with no other contributors in the last 2 years, so rather than fork and wait for a merge that might never happen, I decided to create my own repo. 
+ABSOLUTELY. Please fork and extend. I would like to get to extending this little app, because it is a good example of creating a JS application without standing up a framework, but if you get to it before I do, just submit a PR. Note that there are 34 forks and no PRs in the [original repo](https://github.com/seeschweiler/jsissuetracker), with no other contributors in the last 2 years, so rather than fork and wait for a merge that might never happen, I decided to create my own repo. 
 
 
