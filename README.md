@@ -8,7 +8,7 @@ I stumbled upon a tutorial on [Pure JavaScript - Building A Real-World Applicati
 I believe that if this is intended to be a teaching tool, then the tool should be accurate and reflect correct programming techniques and ideas. I have come across too many broken, incomplete examples. Hopefully this one helps.
 
 # What Did I Do?
-- _Replaced `for` loops with ES6's `find` function_ - this reduced the `O(n)` for loops looking for an issue by it's id with a faster, more legible syntax 
+- _Replaced `for` loops with ES6's `find` function_ - a more legible syntax 
 - Fixed an issue where the description field used in the `saveIssue` method did not match the form element's name, resulting in `undefined` descriptions even after the user added one
 - Replaced string concatenation used to create the issue cards with ES6's template strings
 - Added some defaults if a description or assigned user are left blank
