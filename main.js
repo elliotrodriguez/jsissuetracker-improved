@@ -14,14 +14,16 @@ function fetchIssues(){
 
     if (issues) {
         issues.forEach(element => {
+            const {id, status, description, severity, assignedTo} = element;
+
             issuesList.innerHTML +=   `<div class="well">
-            <h6>Issue ID:  ${element.id} </h6>
-            <p><span class="label label-info">${element.status}</span></p>
-            <h3>${element.description}</h3>
-            <p><span class="glyphicon glyphicon-time"></span>${element.severity}
-            <span class="glyphicon glyphicon-user"></span>${element.assignedTo}</p>
-            <a href="#" class="btn btn-warning" onclick="setStatusClosed('${element.id}')">Close</a>
-            <a href="#" class="btn btn-danger" onclick="deleteIssue('${element.id}')">Delete</a>
+            <h6>Issue ID:  ${id} </h6>
+            <p><span class="label label-info">${status}</span></p>
+            <h3>${description}</h3>
+            <p><span class="glyphicon glyphicon-time"></span>${severity}
+            <span class="glyphicon glyphicon-user"></span>${assignedTo}</p>
+            <a href="#" class="btn btn-warning" onclick="setStatusClosed('${id}')">Close</a>
+            <a href="#" class="btn btn-danger" onclick="deleteIssue('${id}')">Delete</a>
             </div>`;
         });
     }
