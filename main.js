@@ -57,9 +57,7 @@ function saveIssue(e) {
 
   function setStatusClosed (id) {
     const issues = this.issuesList(); 
-    const updateIssue = issues.find(issueToClose => {
-        return issueToClose.id === id
-    })
+    const updateIssue = issues.find(issueToClose => issueToClose.id === id);
 
     const indOf = issues.indexOf(updateIssue)
     issues.splice(indOf, 1)
@@ -78,9 +76,7 @@ function saveIssue(e) {
 
   function deleteIssue (id) {
     const issues = this.issuesList();
-    const issueToDelete = issues.find(issueToFind => {
-        return issueToFind.id === id
-    });
+    const issueToDelete = issues.find(issueToFind => issueToFind.id === id);
     
     const indOf = issues.indexOf(issueToDelete)
     issues.splice(indOf, 1)
