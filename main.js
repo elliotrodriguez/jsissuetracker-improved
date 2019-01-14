@@ -1,5 +1,19 @@
 document.getElementById('issueInputForm').addEventListener('submit', saveIssue);
 
+function createIssueTemplate({ id, status, description, severity, assignedTo }) {
+    return (
+        `<div class="well">
+            <h6>Issue ID:  ${id} </h6>
+            <p><span class="label label-info">${status}</span></p>
+            <h3>${description}</h3>
+            <p><span class="glyphicon glyphicon-time"></span>${severity}
+            <span class="glyphicon glyphicon-user"></span>${assignedTo}</p>
+            <a href="#" class="btn btn-warning" onclick="setStatusClosed('${id}')">Close</a>
+            <a href="#" class="btn btn-danger" onclick="deleteIssue('${id}')">Delete</a>
+        </div>`
+    );
+}
+
 function issuesList() {
     return localStorage.getItem('issues') ? 
         JSON.parse(localStorage.getItem('issues')) :
@@ -9,24 +23,13 @@ function issuesList() {
 function fetchIssues(){
     const issues = this.issuesList();
     const issuesList = document.getElementById('issuesList');
-
-    issuesList.innerHTML = '';
+    let issueListHtml = '';
 
     if (issues) {
-        issues.forEach(element => {
-            const {id, status, description, severity, assignedTo} = element;
-
-            issuesList.innerHTML +=   `<div class="well">
-            <h6>Issue ID:  ${id} </h6>
-            <p><span class="label label-info">${status}</span></p>
-            <h3>${description}</h3>
-            <p><span class="glyphicon glyphicon-time"></span>${severity}
-            <span class="glyphicon glyphicon-user"></span>${assignedTo}</p>
-            <a href="#" class="btn btn-warning" onclick="setStatusClosed('${id}')">Close</a>
-            <a href="#" class="btn btn-danger" onclick="deleteIssue('${id}')">Delete</a>
-            </div>`;
-        });
+        issues.forEach(element => issueListHtml += createIssueTemplate(element));
     }
+
+    issuesList.innerHTML = issueListHtml;    
 }
 
 function saveIssue(e) {
