@@ -1,5 +1,26 @@
 document.getElementById('issueInputForm').addEventListener('submit', saveIssue);
 
+const IssueService = {
+    getIssues() {
+        const issues = localStorage.getItem('issues');
+
+        return issues ? JSON.paerse(issues) : []
+    },
+    getIssue(id) {
+        return this.getIssues.find(issue => issue.id === id);
+    },
+    saveIssue(issue) {
+        const issues = this.getIssues();
+        issues.push(issue);
+        localStorage.setItem('issues', JSON.stringify(issues));
+    },
+    deleteIssue(id) {
+        const issues = this.getIssues.filter(issue => issue.id !== id);
+
+        localStorage.setItem('issues', JSON.stringify(issues));
+    }
+};
+
 function createIssueTemplate({ id, status, description, severity, assignedTo }) {
     return (
         `<div class="well">
@@ -57,31 +78,37 @@ function saveIssue(e) {
 
   function setStatusClosed (id) {
     const issues = this.issuesList(); 
-    const updateIssue = issues.find(issueToClose => issueToClose.id === id);
+   
+    if (issues.length) {
+        const updateIssue = issues.find(issueToClose => issueToClose.id === id);
 
-    const indOf = issues.indexOf(updateIssue)
-    issues.splice(indOf, 1)
-    issues.push({
-        id : updateIssue.id,
-        description : updateIssue.description,
-        severity : updateIssue.severity,
-        assignedTo : updateIssue.assignedTo,
-        status: 'Closed'
-    })
- 
-    localStorage.setItem('issues', JSON.stringify(issues));
-    
-    fetchIssues();
+        const indOf = issues.indexOf(updateIssue)
+        issues.splice(indOf, 1)
+        issues.push({
+            id: updateIssue.id,
+            description: updateIssue.description,
+            severity: updateIssue.severity,
+            assignedTo: updateIssue.assignedTo,
+            status: 'Closed'
+        })
+
+        localStorage.setItem('issues', JSON.stringify(issues));
+
+        fetchIssues();
+    }
   }
 
   function deleteIssue (id) {
     const issues = this.issuesList();
-    const issueToDelete = issues.find(issueToFind => issueToFind.id === id);
     
-    const indOf = issues.indexOf(issueToDelete)
-    issues.splice(indOf, 1)
-    localStorage.setItem('issues', JSON.stringify(issues));
-    
-    fetchIssues();
+    if (issues.length) {
+        const issueToDelete = issues.find(issueToFind => issueToFind.id === id);
+
+        const indOf = issues.indexOf(issueToDelete)
+        issues.splice(indOf, 1)
+        localStorage.setItem('issues', JSON.stringify(issues));
+
+        fetchIssues();
+    }
   }
   
