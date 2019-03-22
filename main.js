@@ -4,7 +4,7 @@ const IssueService = {
     getIssues() {
         const issues = localStorage.getItem('issues');
 
-        return issues ? JSON.paerse(issues) : []
+        return issues ? JSON.parse(issues) : []
     },
     getIssue(id) {
         return this.getIssues.find(issue => issue.id === id);
